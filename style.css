@@ -1,0 +1,182 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ffffff, #d0f0c0);
+    /* White to soft mint green */
+
+
+    /* White to soft mint green */
+
+
+    /* Subtle light gray to pastel green gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+main {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    /* Default for mobile */
+    max-width: 500px;
+    /* Default max width for mobile */
+    transition: all 0.3s ease;
+    /* Smooth resizing */
+}
+
+/* Larger size for tablets and desktops */
+@media (min-width: 768px) {
+    main {
+        max-width: 800px;
+        /* Increase max width for tablets */
+        padding: 3.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1000px;
+        /* Increase max width for large desktops */
+        padding: 4rem;
+    }
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+canvas {
+    display: block;
+    border: 1px solid #ccc;
+    margin: 2rem auto;
+    width: 100%;
+    height: auto;
+}
+
+/* File upload button container */
+.file-input-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+/* Hide the default file input */
+.file-input-container input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Style for the custom upload button */
+.file-input-label {
+    background-color: #4CAF50;
+    /* Keep the original green */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for the upload button */
+.file-input-label:hover {
+    background-color: #45a049;
+    /* Slightly darker green */
+}
+
+.result-box {
+    background-color: #f9f9f9;
+    /* Subtle light background */
+    border: 1px solid #ddd;
+    /* Light border for separation */
+    border-radius: 8px;
+    /* Smooth, rounded corners */
+    padding: 15px;
+    /* Add spacing inside the box */
+    margin-top: 20px;
+    /* Add spacing above the result box */
+    text-align: center;
+    /* Center-align text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.result-box p {
+    margin: 5px 0;
+    /* Add spacing between the label and confidence */
+    font-size: 16px;
+    /* Set a clear, readable font size */
+    color: #333;
+    /* Darker color for better contrast */
+    line-height: 1.5;
+    /* Improve line spacing */
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    /* Subtle text color */
+    background-color: #f9f9f9;
+    /* Light background matching info box */
+    border: 1px solid #ddd;
+    /* Same border as the info section */
+    border-radius: 8px;
+    /* Same rounded corners as the info box */
+    padding: 10px 15px;
+    /* Add consistent padding */
+    margin-top: 15px;
+    /* Space above the footer */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+canvas {
+    border: none !important;
+    /* Remove any borders */
+    outline: none !important;
+    /* Remove focus outlines */
+    background: transparent !important;
+    /* Ensure the canvas is fully transparent */
+    display: block;
+    /* Fixes spacing issues with inline canvases */
+}
+
+
+/* Adjustments for larger text on desktops */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .file-input-label {
+        font-size: 20px;
+        padding: 14px 28px;
+    }
+
+    #label, #confidence {
+        font-size: 20px;
+    }
+}

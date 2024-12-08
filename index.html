@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+        <script src="https://unpkg.com/ml5@1/dist/ml5.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fun and interactive Frog Detector web app powered by machine learning.">
+        <meta name="keywords" content="Frog Detector, Machine Learning, Image Classification, Web App">
+        <meta name="author" content="Andrew Sink">
+
+        <!-- Favicon -->
+        <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+        <link rel="manifest" href="icons/site.webmanifest">
+
+        <title>Frog Detector</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <main>
+            <h1>Frog Detector</h1>
+            <div id="output">
+                <canvas id="canvas" width="640" height="480"></canvas>
+                <!-- File Upload Button -->
+                <div class="file-input-container">
+                    <label for="imageUpload" class="file-input-label">Upload an Image</label>
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+                <div class="result-box">
+                    <p id="label">Detecting frogs...</p>
+                    <p id="confidence">Confidence: Calculating...</p>
+                </div>
+            </div>
+
+            <footer>
+                <p>Frog Detector by <a href="https://andrewsink.xyz/" target="_blank">Andrew Sink</a> - 2024 - Powered
+                    by <a href="https://ml5js.org/" target="_blank">ml5js</a>
+                </p>
+                <br>
+                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+                <script
+                    type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#4CAF50', 'A0A35L8LW'); kofiwidget2.draw();</script>
+            </footer>
+            </div>
+        </main>
+        <script src="sketch.js"></script>
+    </body>
+
+</html>
