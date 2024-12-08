@@ -1,6 +1,6 @@
 # Frog Detector
 
-Try it yourself:
+Try it yourself: https://andrewsink.github.io/Frog-Detector/
 
 ![Frog Detector](https://github.com/user-attachments/assets/c3c76422-28a5-4617-a554-57b83f8d416f)
 
