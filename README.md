@@ -2,7 +2,7 @@
 
 Try it yourself: https://andrewsink.github.io/Frog-Detector/
 
-![Frog Detector](https://github.com/user-attachments/assets/c3c76422-28a5-4617-a554-57b83f8d416f)
+![Frog Detector](https://github.com/user-attachments/assets/faaccc22-c604-4991-ae4a-af3d68c28cc0)
 
 Answering life's most important question: *Is there a frog or toad in this picture?*  
 
