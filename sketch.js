@@ -6,16 +6,20 @@ let highestConfidence = 0; // Variable to track the highest confidence for 'frog
 let highestLabel = ""; // Tracks whether 'Frog' or 'Toad' is associated with highestConfidence
 
 // Load the model and set up file upload listener
-function preload() {
-    classifier = ml5.imageClassifier("MobileNet");
+async function preload() {
+    try {
+        classifier = await ml5.imageClassifier("MobileNet");
 
-    // Set default image
-    img.src = "images/frog.jpg";
-    img.onload = classifyImage;
+        // Set default image
+        img.src = "images/frog.jpg";
+        img.onload = classifyImage;
 
-    // Handle file uploads
-    const uploadInput = document.getElementById("imageUpload");
-    uploadInput.addEventListener("change", handleImageUpload);
+        // Handle file uploads
+        const uploadInput = document.getElementById("imageUpload");
+        uploadInput.addEventListener("change", handleImageUpload);
+    } catch (error) {
+        console.error("Error loading model:", error);
+    }
 }
 
 // Handle uploaded image
@@ -75,7 +79,13 @@ function classifyImage() {
     ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
 
     // Classify the canvas
-    classifier.classify(canvas, gotResults);
+    if (classifier && classifier.classify) {
+        classifier.classify(canvas, gotResults);
+    } else if (classifier && classifier.predict) {
+        classifier.predict(canvas, gotResults);
+    } else {
+        console.error("Classifier not properly initialized");
+    }
 }
 
 // Handle classification results
@@ -155,4 +165,6 @@ function launchConfetti() {
 }
 
 // Start the process
-preload();
+preload().catch(error => {
+    console.error("Failed to initialize:", error);
+});
